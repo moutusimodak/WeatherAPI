@@ -5,6 +5,10 @@ pipeline {
         stage('build') {
             steps {
                 echo 'yesss building the application...'
+                maven(
+                    name: 'maven 3.9.9',  
+                    goals: 'install'
+                )
             }
         }
         stage('test') {
@@ -17,6 +21,6 @@ pipeline {
                 echo 'deploying the application...'
             }
         }
-    }  // <- Closing brace for stages block
-}      // <- Missing closing brace for the pipeline block
+    }  
+}   
 
