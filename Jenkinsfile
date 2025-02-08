@@ -5,10 +5,7 @@ pipeline {
         stage('build') {
             steps {
                 echo 'yesss building the application...'
-                maven(
-                    name: 'maven 3.9.9',  
-                    goals: 'install'
-                )
+                sh 'mvn clean install'
             }
         }
         stage('test') {
